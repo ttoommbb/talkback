@@ -3,5 +3,5 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion "android-27"
+    compileSdkVersion "android-28"
 }
