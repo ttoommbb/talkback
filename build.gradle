@@ -1,7 +1,7 @@
 /* For building open-source release of accessibility services.  */
 
 apply plugin: 'com.android.application'
-
+apply plugin: 'idea'
 apply from: 'shared.gradle'
 
 buildscript {
@@ -23,6 +23,7 @@ allprojects {
 }
 
 android {
+    compileSdkVersion 28
     buildToolsVersion '28.0.3'
     defaultConfig {
         minSdkVersion 28
@@ -43,4 +44,11 @@ android {
 dependencies {
     compile project(':switchaccess')
     compile project(':talkback')
+}
+
+idea {
+    module {
+        downloadJavadoc = true
+        downloadSources = true
+    }
 }

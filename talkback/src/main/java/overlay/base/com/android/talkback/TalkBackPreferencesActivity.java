@@ -71,7 +71,7 @@ import com.google.android.accessibility.utils.SharedPreferencesUtils;
 import com.google.android.accessibility.utils.WebActivity;
 import com.google.android.clockwork.remoteintent.RemoteIntent;
 import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.GooglePlayServicesUtil;
+import com.google.android.gms.common.GoogleApiAvailability;
 import java.util.List;
 
 /** Activity used to set TalkBack's service preferences. */
@@ -1015,8 +1015,8 @@ public class TalkBackPreferencesActivity extends Activity {
         return;
       }
 
-      if (GooglePlayServicesUtil.isGooglePlayServicesAvailable(activity)
-          != ConnectionResult.SUCCESS) {
+      if (GoogleApiAvailability.getInstance().isGooglePlayServicesAvailable(activity)
+      != ConnectionResult.SUCCESS) {
         // Not needed, but playing safe since this is hard to test outside of China
         playStoreButton.setIntent(null);
         final PreferenceGroup category =
